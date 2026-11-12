@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plant Data Logger | CICTNA RDC (demo)</title>
+<meta name="description" content="Demo of a plant data logger for water treatment: PLC values into PostgreSQL, live trends, alarms and daily reports. Simulated data. Built by CICTNA RDC.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=JetBrains+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="https://cictnardc.net" target="_blank" rel="noopener">
+      <img src="favicon.svg" alt="" width="34" height="34">
+      <span>
+        <b data-i18n="appName">Plant Data Logger</b>
+        <small>CICTNA RDC</small>
+      </span>
+    </a>
+    <div class="top-right">
+      <span class="clock" title="Plant time"><span data-i18n="plantTime">Plant time</span> <b id="clock">--:--:--</b> <small>AST</small></span>
+      <button id="langBtn" class="btn ghost" type="button">عربي</button>
+    </div>
+  </div>
+</header>
+
+<div class="ribbon">
+  <div class="wrap" data-i18n="ribbon">Interactive demo with simulated values. No real plant or PLC is connected.</div>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div>
+      <h1 data-i18n="heroTitle">From the PLC to the report, without losing a value</h1>
+      <p data-i18n="heroText">Process values are read from the plant controllers every two seconds, stored in PostgreSQL, and turned into live trends, alarms and daily reports for operators and management.</p>
+    </div>
+    <div class="plant-switch" role="tablist">
+      <button class="seg on" data-plant="msf" role="tab" data-i18n="plantMsf">MSF desalination unit</button>
+      <button class="seg" data-plant="dosing" role="tab" data-i18n="plantDosing">Acid dosing skid</button>
+    </div>
+  </section>
+
+  <section class="status" id="status"></section>
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="grid2">
+    <div class="card">
+      <div class="card-h">
+        <div>
+          <span class="eyebrow" data-i18n="trendEyebrow">Last 30 minutes</span>
+          <h2 id="trendTitle"></h2>
+        </div>
+      </div>
+      <div class="chart-box"><canvas id="trend"></canvas></div>
+      <p class="note" id="trendNote"></p>
+    </div>
+
+    <div class="card">
+      <div class="card-h">
+        <div>
+          <span class="eyebrow" data-i18n="alarmEyebrow">Alarms and events</span>
+          <h2 data-i18n="alarmTitle">Alarm list</h2>
+        </div>
+        <span class="pill" id="alarmCount">0</span>
+      </div>
+      <div class="alarm-list" id="alarms"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-h">
+      <div>
+        <span class="eyebrow" data-i18n="pathEyebrow">How the data moves</span>
+        <h2 data-i18n="pathTitle">Collection, buffering and storage</h2>
+      </div>
+      <button id="netBtn" class="btn warn" type="button" data-i18n="dropNet">Simulate network drop</button>
+    </div>
+    <div class="path" id="path"></div>
+    <div class="counters" id="counters"></div>
+    <div class="log-h">
+      <span data-i18n="logTitle">Collector log</span>
+      <span class="log-legend" dir="ltr"><i class="mb">MB</i> Modbus TCP <i class="ua">UA</i> OPC UA <i class="db">DB</i> PostgreSQL</span>
+    </div>
+    <pre class="log" id="log" dir="ltr"></pre>
+  </section>
+
+  <section class="card">
+    <div class="card-h">
+      <div>
+        <span class="eyebrow" data-i18n="reportEyebrow">Generated every night at 00:05</span>
+        <h2 id="reportTitle"></h2>
+      </div>
+      <div class="btns">
+        <button id="csvBtn" class="btn" type="button">CSV</button>
+        <button id="printBtn" class="btn ghost" type="button" data-i18n="print">Print / PDF</button>
+      </div>
+    </div>
+    <div class="table-wrap"><table class="report" id="report"></table></div>
+  </section>
+
+  <section class="card live">
+    <span class="eyebrow" data-i18n="liveEyebrow">From demo to a live system</span>
+    <h2 data-i18n="liveTitle">What a real project adds</h2>
+    <ul class="live-list">
+      <li data-i18n="live1">Connection to your PLCs and your real tag list, over Modbus TCP, OPC UA or Siemens S7</li>
+      <li data-i18n="live2">Database and collector installed on the plant PC, your server or a cloud machine, with backups</li>
+      <li data-i18n="live3">Reports in the format your client asks for, in Arabic and English, sent by email</li>
+      <li data-i18n="live4">Export to the client's ERP or maintenance system, and user accounts with access rights</li>
+      <li data-i18n="live5">Commissioning on site or remote, documentation and support</li>
+    </ul>
+    <p class="note" data-i18n="liveNote">Works on its own or next to an existing SCADA such as Wonderware (AVEVA).</p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <span><span data-i18n="builtBy">Built by</span> Talel Ksiksi, <a href="https://cictnardc.net" target="_blank" rel="noopener">CICTNA RDC</a></span>
+    <a href="mailto:talel@cictnardc.net">talel@cictnardc.net</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="lib/chart.umd.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
