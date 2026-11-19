@@ -59,6 +59,53 @@
       csvDone: 'Report exported as CSV.', netDown: 'Network to the database dropped. The collector keeps buffering.',
       netUp: 'Network restored. Buffered values are being written.'
     },
+    fr: {
+      appName: 'Enregistreur de données de site', plantTime: 'Heure du site',
+      ribbon: "Démo interactive avec des valeurs simulées. Aucun site ni automate réel n'est connecté.",
+      heroTitle: "De l'automate au rapport, sans perdre une valeur",
+      heroText: "Les valeurs process sont lues dans les automates toutes les deux secondes, stockées dans PostgreSQL, puis transformées en tendances en direct, alarmes et rapports quotidiens pour les opérateurs et la direction.",
+      plantMsf: 'Unité de dessalement MSF', plantDosing: "Skid de dosage d'acide",
+      trendEyebrow: '30 dernières minutes', alarmEyebrow: 'Alarmes et événements', alarmTitle: 'Liste des alarmes',
+      pathEyebrow: 'Le parcours des données', pathTitle: 'Collecte, mise en tampon et stockage',
+      dropNet: 'Simuler une coupure réseau', restoreNet: 'Rétablir le réseau',
+      logTitle: 'Journal du collecteur', reportEyebrow: 'Généré chaque nuit à 00:05', print: 'Imprimer / PDF',
+      liveEyebrow: "De la démo au système réel", liveTitle: "Ce qu'ajoute un vrai projet",
+      live1: 'Connexion à vos automates et à votre vraie liste de variables, en Modbus TCP, OPC UA ou Siemens S7',
+      live2: 'Base de données et collecteur installés sur le PC du site, votre serveur ou une machine cloud, avec sauvegardes',
+      live3: 'Des rapports au format demandé par votre client, en arabe et en anglais, envoyés par e-mail',
+      live4: "Export vers l'ERP ou la GMAO du client, et comptes utilisateurs avec droits d'accès",
+      live5: 'Mise en service sur site ou à distance, documentation et support',
+      liveNote: "Fonctionne seul ou à côté d'un SCADA existant comme Wonderware (AVEVA).",
+      builtBy: 'Réalisé par',
+      sCollector: 'Collecteur', sRunning: 'en marche', sPlc: 'Liaisons automates', sDb: 'Base de données', sWriting: 'écriture',
+      sBuffering: 'injoignable, mise en tampon', sFlushing: 'rattrapage', sAlarms: 'Alarmes actives', sUptime: 'En service depuis',
+      tDist: 'Production de distillat', tFeed: "Alimentation en eau de mer", tTbt: 'Température max. de saumure (TBT)',
+      tSteam: 'Vapeur vers le réchauffeur de saumure', tGor: 'Rapport de rendement (GOR)', tCond: 'Conductivité du distillat',
+      tVac: 'Vide du dernier étage', tAnti: 'Dosage antitartre',
+      tFlow: "Débit d'eau traitée", tRate: "Débit de dosage d'acide", tPhIn: 'pH avant dosage', tPhOut: 'pH après dosage',
+      tTank: "Niveau de la cuve d'acide", tStroke: 'Course pompe A', tSpec: "Consommation spécifique d'acide", tDuty: 'Pompe en service',
+      dutyVal: 'A', dutyMeta: 'B en secours', calc: 'calculé', setpoint: 'consigne',
+      lo: 'bas', hi: 'haut', loLo: 'très bas', hiHi: 'très haut',
+      trendMsf: 'Production et température max. de saumure', trendDosing: "Régulation du pH et dosage d'acide",
+      trendNoteMsf: "Enregistré toutes les 2 secondes. Pendant une coupure réseau, le collecteur garde les valeurs et comble le trou ensuite.",
+      trendNoteDosing: "La ligne pointillée est la consigne de pH. Le dosage suit le débit d'eau pour que le pH reste sur la cible.",
+      nPlcMsf: 'Automates du site', nPlcMsfP: 'Automate Rockwell en OPC UA, automate Schneider en Modbus TCP',
+      nPlcDos: 'Automate du site', nPlcDosP: 'Automate Schneider en Modbus TCP',
+      nCol: 'Service de collecte', nColP: 'Lit toutes les 2 s, contrôle la qualité, garde un tampon local si la base est injoignable',
+      nDb: 'PostgreSQL', nDbP: 'Valeurs horodatées, partitionnées par mois, conservées des années',
+      nOut: 'Rapports et exports', nOutP: 'Écrans opérateurs, rapports quotidiens, export CSV et ERP',
+      cRows: "Valeurs stockées aujourd'hui", cBuf: 'Dans le tampon local', cLost: 'Valeurs perdues', cLat: 'Dernière écriture',
+      aActive: 'active', aAck: 'acquittée', aCleared: 'disparue', ackBtn: 'Acquitter', noAlarms: 'Aucune alarme sur cette unité.',
+      evStart: 'Collecteur démarré, toutes les liaisons automates connectées', evRefill: "Cuve d'acide remplie",
+      evNetDown: 'Connexion à la base perdue, mise en tampon locale', evNetUp: 'Base de retour, tampon écrit, rien de perdu',
+      repMsf: 'Rapport de production quotidien', repDosing: 'Rapport de dosage quotidien',
+      rDate: 'Date', rDist: 'Distillat (m³)', rSteam: 'Vapeur (t)', rGor: 'GOR', rTbt: 'TBT moy. (°C)',
+      rAnti: 'Antitartre (L)', rAvail: 'Disponibilité (%)', rAlarms: 'Alarmes',
+      rWater: 'Eau traitée (m³)', rAcid: 'Acide consommé (L)', rSpec: 'Acide (g/m³)', rPh: 'pH moy. après',
+      rPumpA: 'Pompe A (h)', rPumpB: 'Pompe B (h)', rTotal: 'Total / moyenne',
+      csvDone: 'Rapport exporté en CSV.', netDown: 'Le réseau vers la base est coupé. Le collecteur continue à mettre en tampon.',
+      netUp: 'Réseau rétabli. Les valeurs en tampon sont en cours d\'écriture.'
+    },
     ar: {
       appName: 'مسجّل بيانات المحطة', plantTime: 'توقيت المحطة',
       ribbon: 'نسخة تجريبية تفاعلية بقيم محاكاة. لا توجد محطة أو PLC متصلة فعليًا.',
@@ -107,8 +154,16 @@
       netUp: 'عادت الشبكة. تُكتب القيم المخزنة مؤقتًا الآن.'
     }
   };
+  /* The language is shared with the rest of cictnardc.net ('lang'); ?lang= in the address wins. */
+  var LANGS = ['en', 'fr', 'ar'];
   var lang = 'en';
-  try { if (localStorage.getItem('pdl-lang') === 'ar') lang = 'ar'; } catch (e) { /* storage unavailable */ }
+  try {
+    var asked = new URLSearchParams(location.search).get('lang');
+    var saved = localStorage.getItem('lang') || (localStorage.getItem('pdl-lang') === 'ar' ? 'ar' : null);
+    var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+    lang = LANGS.indexOf(asked) >= 0 ? asked : LANGS.indexOf(saved) >= 0 ? saved : LANGS.indexOf(nav) >= 0 ? nav : 'en';
+    if (asked && LANGS.indexOf(asked) >= 0) localStorage.setItem('lang', asked);
+  } catch (e) { /* storage unavailable */ }
   function t(k) { return (L[lang] && L[lang][k]) || L.en[k] || k; }
 
   /* ----------------------------------------------------------- helpers */
@@ -118,6 +173,7 @@
   var fmtHM = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false });
   var fmtDate = new Intl.DateTimeFormat('en-GB', { timeZone: tz, weekday: 'short', day: '2-digit', month: 'short' });
   var fmtDateAr = new Intl.DateTimeFormat('ar-SA-u-nu-latn-ca-gregory', { timeZone: tz, weekday: 'short', day: '2-digit', month: 'short' });
+  var fmtDateFr = new Intl.DateTimeFormat('fr-FR', { timeZone: tz, weekday: 'short', day: '2-digit', month: 'short' });
   function nf(v, d) { return Number(v).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d }); }
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
   function gauss() { return (Math.random() + Math.random() + Math.random() - 1.5) / 1.5; }
@@ -308,7 +364,7 @@
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t(el.getAttribute('data-i18n')); });
-    $('langBtn').textContent = lang === 'ar' ? 'English' : 'عربي';
+    document.querySelectorAll('#langs button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)); });
     $('netBtn').textContent = net === 'down' ? t('restoreNet') : t('dropNet');
     $('trendTitle').textContent = plant === 'msf' ? t('trendMsf') : t('trendDosing');
     $('trendNote').textContent = plant === 'msf' ? t('trendNoteMsf') : t('trendNoteDosing');
@@ -517,7 +573,7 @@
       : [['rDate'], ['rWater', 0, 'sum'], ['rAcid', 1, 'sum'], ['rSpec', 0, 'avg'], ['rPh', 2, 'avg'], ['rPumpA', 1, 'sum'], ['rPumpB', 1, 'sum'], ['rAlarms', 0, 'sum']];
   }
   function renderReport() {
-    var cols = reportCols(), rows = reportData(), df = lang === 'ar' ? fmtDateAr : fmtDate;
+    var cols = reportCols(), rows = reportData(), df = lang === 'ar' ? fmtDateAr : lang === 'fr' ? fmtDateFr : fmtDate;
     var head = '<thead><tr>' + cols.map(function (c, i) { return '<th' + (i ? ' class="n"' : '') + '>' + esc(t(c[0])) + '</th>'; }).join('') + '</tr></thead>';
     var body = '<tbody>' + rows.map(function (r) {
       return '<tr>' + r.map(function (v, i) { return i === 0 ? '<td>' + esc(df.format(v)) + '</td>' : '<td class="n">' + nf(v, cols[i][1]) + '</td>'; }).join('') + '</tr>';
@@ -610,10 +666,12 @@
       renderAll(); renderReport(); buildChart();
     });
   });
-  $('langBtn').addEventListener('click', function () {
-    lang = lang === 'ar' ? 'en' : 'ar';
-    try { localStorage.setItem('pdl-lang', lang); } catch (e) { /* storage unavailable */ }
-    renderAll(); renderReport(); buildChart();
+  document.querySelectorAll('#langs button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      lang = b.getAttribute('data-lang');
+      try { localStorage.setItem('lang', lang); } catch (e) { /* storage unavailable */ }
+      renderAll(); renderReport(); buildChart();
+    });
   });
   $('netBtn').addEventListener('click', function () {
     if (net === 'down') restoreNetwork();

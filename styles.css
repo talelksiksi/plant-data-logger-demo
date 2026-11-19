@@ -166,3 +166,9 @@ html[dir=rtl] .link{animation-direction:reverse}
   .card.print-me::before{content:"CICTNA RDC  |  Plant Data Logger (demo, simulated values)";display:block;font-size:.8rem;color:var(--stone);margin-bottom:10px}
 }
 @media (prefers-reduced-motion:reduce){.link,.dot.alarm,.al.active .sev{animation:none}}
+
+/* language switch */
+.langs{display:inline-flex;gap:2px;padding:2px;border:1px solid var(--rule);border-radius:999px;direction:ltr}
+.langs button{all:unset;cursor:pointer;font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;color:var(--stone)}
+.langs button[aria-pressed="true"]{background:var(--ink,#1f2e2f);color:#fff}
+.langs button:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
